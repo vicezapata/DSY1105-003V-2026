@@ -158,15 +158,39 @@ fun HomeScreen(
 
             )
 
+            if(state.error !=null){
+                Spacer(modifier=Modifier.height(8.dp))
+                Text(
+                text=state.error ?: "",
+                    color=MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.Bold
 
+                )
+
+            }// fin if
 
             Spacer(modifier= Modifier.height(66.dp))
-            Button(onClick = {/* accion futura */},
+            Button(onClick = {/* accion futura */
+            vm.submit { user->
+                    navController.navigate("muestraDatos/$user")
+                    {// inicio navegacion
+                            popUpTo("login") {inclusive=true} // No volver al login
+                        launchSingleTop
+
+                    }// fin   naveacion
+
+            }//fin --> user
+            },  //fin onClick
+
+             enabled=!state.isLoading,
             modifier = Modifier.fillMaxWidth(0.8f)
 
 
             ) {
-                Text("Presioname")
+                //Text("Presioname")
+
+                Text(if (state.isLoading) "Validando" else "Iniciar sesion")
+
             }
 
 
