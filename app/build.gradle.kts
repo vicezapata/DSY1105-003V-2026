@@ -52,6 +52,12 @@ dependencies {
   //Dependencias para la navegacion con Jetpack Compose
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
+    // dependencias para iconos
+    implementation("androidx.compose.material:material-icons-core")
+    implementation("androidx.compose.material:material-icons-extended")
+
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

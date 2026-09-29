@@ -172,7 +172,10 @@ fun HomeScreen(
             Spacer(modifier= Modifier.height(66.dp))
             Button(onClick = {/* accion futura */
             vm.submit { user->
-                    navController.navigate("muestraDatos/$user")
+                    //navController.navigate("muestraDatos/$user")
+                navController.navigate("DrawerMenu/$user")
+
+
                     {// inicio navegacion
                             popUpTo("login") {inclusive=true} // No volver al login
                         launchSingleTop
